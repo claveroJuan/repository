@@ -1,0 +1,71 @@
+<section id="main" role="main" >
+	<div class="container-fluid">
+        <div class="page-header page-header-block">
+            <div class="page-header-section hidden-xs hidden-sm">
+                <h4 class="title semibold">Partidos</h4>
+            </div>
+            <div class="page-header-section">
+            		
+            		<div class="row hidden-md" >
+           			<div class="col-md-3 col-xs-3 pl15" >
+             			<a href="#/" class="btn btn-primary btn-outline mb5">Volver</a>
+             		</div>
+             		<div class="col-md-6 col-xs-6 text-center" >
+             			<h4 class="title semibold">Partidos</h4>
+             		</div>
+             		<div class="col-md-3 col-xs-3 text-right" >
+             			<a href="#/matches/create" class="btn btn-primary btn-outline mb5">Nuevo</a>
+             		</div>
+                 </div>
+            
+            
+            
+                <div class="toolbar hidden-xs hidden-sm">
+                    <div class="col-md-6 col-md-offset-6">
+                        <div class="panel-toolbar">
+                            <div class="input-group">
+                                <div class="has-icon">
+                                    <input type="text" ng-model="q" placeholder="buscar" class="form-control" />
+                                    <i class="ico-search form-control-icon"></i>
+                                </div>
+                                <div class="input-group-btn">
+                                		<a href="#/matches/create" class="btn btn-default">Nuevo</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row" >
+        		<div class="list-group" >
+	        		<div class="list-group-item" ng-repeat="e in matches | filter:q as results">
+	        			<div class="row" >
+		        			<div class="col-md-6 col-xs-6 text-center">
+		        				<div>Equipo Local</div>
+		        				<div style="font-weight: bold;" >{{e.local.name}}</div>
+		        			</div>
+		        			<div class="col-md-6 col-xs-6 text-center">
+		        				<div>Equipo Visitante</div>
+		        				<div style="font-weight: bold;">{{e.visitor.name}}</div>
+		        			</div>
+	        			</div>
+	        		</div>
+        		</div>
+        
+           
+			<div class="col-md-12" ng-if="!flagLoading && matches.length == 0">
+      			<strong ng-show="!flagErrorLoading">No existen partidos, presione el boton "nuevo" para crear un partido...</strong>
+			</div>
+			
+			
+			<div class="col-md-12 mb20 mt20" ng-show="flagErrorLoading" style="text-align: center;">
+      			<strong style="color:gray;">Ocurrio un error al cargar la información, intente más tarde</strong>
+      			<div><i style="font-size:100px;color:#EBEBEB;" class=" ico-heart-broken mb20 mt20"  ></i></div>
+			</div>
+			
+        </div>
+	</div>
+</section>

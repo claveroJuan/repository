@@ -1,0 +1,110 @@
+<section id="main" role="main" >
+	<div class="container-fluid">
+	<div class="page-header page-header-block">
+	    <div class="page-header-section">
+	        <h4 class="title semibold">Editar Jugador</h4>
+	    </div>
+	    <div class="page-header-section">
+	        <div class="toolbar">
+	            <ol class="breadcrumb breadcrumb-transparent nm">
+	                <li><a href="#/">Home</a></li>
+	                <li><a href="#/teams">Equipos</a></li>
+	                <li class="active">Nuevo Jugador</li>
+	            </ol>
+	        </div>
+	    </div>
+	</div>
+	<div class="row">
+	<div class="col-md-6" style="border-right:1px solid #e0e7e8;">
+		<form class="form-horizontal form-bordered" id="form-crear-equipo">
+			<div class="form-group">
+                 <label class="col-sm-3 control-label">Nombres</label>
+                 <div class="col-sm-9">
+                     <input type="text" class="form-control" ng-model="player.name"
+                     data-parsley-errors-container="#error-container" data-parsley-error-message="ingrese el nombre del jugador" data-parsley-required>
+                 </div>
+             </div>
+             
+             <div class="form-group">
+                 <label class="col-sm-3 control-label">Apellidos</label>
+                 <div class="col-sm-9">
+                     <input type="text" class="form-control" ng-model="player.lastName"
+                     data-parsley-errors-container="#error-container" data-parsley-error-message="ingrese el apellido del jugador" data-parsley-required>
+                 </div>
+             </div>
+             
+             
+             <div class="form-group">
+                 <label class="col-sm-3 control-label">Estatura</label>
+                 <div class="col-sm-9">
+                 	<div class="input-group">
+                         <input type="text" class="form-control" ng-model="player.height">
+                         <span class="input-group-addon">Metros</span>
+                     </div>
+                 </div>
+             </div>
+             
+             
+             <div class="form-group">
+                 <label class="col-sm-3 control-label">Peso</label>
+                 <div class="col-sm-9">
+                 	<div class="input-group">
+                         <input type="number" class="form-control" ng-model="player.weight">
+                         <span class="input-group-addon">Kilogramos</span>
+                     </div>
+                 </div>
+             </div>
+             
+             <div class="form-group">
+                 <label class="col-sm-3 control-label">Número de Camiseta</label>
+                 <div class="col-sm-9">
+                     <input type="number" class="form-control" ng-model="player.number">
+                 </div>
+             </div>
+             
+             <div class="form-group">
+                 <label class="col-sm-3 control-label">Posicion</label>
+                 <div class="col-sm-9">
+                     <select class="form-control" ng-model="player.position" 
+                     data-parsley-errors-container="#error-container" data-parsley-error-message="ingrese una descripcion" data-parsley-required>
+                     		<option value="0">Seleccione una posicion</option>
+                     		<option value="POINT_GUARD">{{msgI18n('POINT_GUARD')}}</option>
+                     		<option value="SHOOTING_GUARD">{{msgI18n('SHOOTING_GUARD')}}</option>
+                     		<option value="SMALL_FORWARD">{{msgI18n('SMALL_FORWARD')}}</option>
+                     		<option value="POWER_FORWARD">{{msgI18n('POWER_FORWARD')}}</option>
+                     		<option value="CENTER">{{msgI18n('CENTER')}}</option>
+                     </select>
+                 </div>
+             </div>
+             
+             
+             <div class="form-group">
+                  <label class="col-sm-3 control-label">Genero</label>
+                  <div class="col-sm-9">
+                      <div class="btn-group btn-group-justified">
+                      	   <div class="btn-group" role="group" >
+                      	   		<button type="button" class="btn btn-default {{button.male}}"   ng-click="player.gender='MALE';button.male='btn-primary';button.female='';"  >
+                      	   			<i class="ico-male" style="font-size:30px;"></i></button>
+                      	   </div>
+                      	   <div class="btn-group" role="group" >
+                      	   		<button type="button" class="btn btn-default {{button.female}}" ng-click="player.gender='FEMALE';button.female='btn-primary';button.male='';">
+                      	   			<i class="ico-female" style="font-size:30px;"></i></button>
+                         	   </div>
+                      </div>
+                  </div>
+              </div>
+              
+              
+             <div class="form-group">
+             		<div class="col-sm-12">
+             			<button class="btn btn-success btn-block mt15 mb15"  value="button" ng-click="save()">Guardar</button>
+             		</div>
+             </div>
+	         <div ng-show="diplayError" class="alert alert-danger">{{errorMsg}}</div>
+		</form>
+	</div>
+</div>
+        
+        
+	</div>
+</section>

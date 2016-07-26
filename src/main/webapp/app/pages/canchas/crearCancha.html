@@ -1,0 +1,76 @@
+<section id="main" role="main" >
+	<div class="container-fluid">
+        <div class="page-header page-header-block">
+            <div class="page-header-section hidden-xs hidden-sm">
+                <h4 class="title semibold ">Nuevo Cancha</h4>
+            </div>
+            <div class="page-header-section">
+            		<div class="row hidden-md">
+            			<div class="col-md-3 col-xs-3 pl15" >
+              			<a href="#/teams" class="btn btn-primary btn-outline mb5">Volver</a>
+	              	</div>
+	              	<div class="col-md-6 col-xs-6" >
+	              		<h4 class="title semibold">Nuevo Cancha</h4>
+	              	</div>
+	              	<div class="col-md-3 col-xs-3" ></div>
+            		</div>
+            	
+                <div class="toolbar hidden-xs hidden-sm">
+                    <ol class="breadcrumb breadcrumb-transparent nm">
+                        <li><a href="#/">Home</a></li>
+                        <li><a href="#/teams">Canchas</a></li>
+                        <li class="active">Nuevo Cancha</li>
+                    </ol>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        
+        <div class="row">
+		        			<div class="col-md-6" style="border-right:1px solid #e0e7e8;">
+		        				<form class="form-horizontal form-bordered" id="form-crear-equipo">
+		        					<div class="form-group">
+	                                    <label class="col-sm-3 control-label">Nombre</label>
+	                                    <div class="col-sm-9">
+	                                        <input type="text" class="form-control" ng-model="team.name"
+	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="ingrese el nombre del equipo" data-parsley-required>
+	                                    </div>
+	                                </div>
+	                                
+	                                
+	                                <div class="form-group">
+	                                    <label class="col-sm-3 control-label">Comuna</label>
+	                                   
+	                                </div>
+	                               
+	                                
+	                                <div class="form-group">
+	                                		<div class="col-sm-12">
+	                                			<button class="btn btn-success btn-block mt15 mb15"  value="button" ng-click="save()">Guardar</button>
+	                                		</div>
+	                                		
+	                                </div>
+	                                
+	                                <div ng-show="diplayError" class="alert alert-danger">{{errorMsg}}</div>
+		        					
+		        				</form>
+		        			</div>
+		        			
+		        			<div class="col-md-6 hidden-xs hidden-sm">
+               				<section class="jumbotron jumbotron-bg10" data-stellar-background-ratio="0.4" style="min-height:320px;">
+               					<div class="pattern pattern2 overlay overlay-primary"></div>
+               					<div class="container" style="padding-top:8%;">
+			                        <h1 class="thin text-white text-center font-alt">Nuevo Cancha.</h1>
+			                        <h4 class="thin text-white text-center">Vive el futbol donde sea que estes!</h4>				                        
+			                    </div>
+               				</section>
+		        			</div>
+		        		</div>
+	</div>
+</section>
+
+<script>
+$.stellar({horizontalScrolling: false});
+</script>

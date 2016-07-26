@@ -1,0 +1,130 @@
+<section id="main" role="main" >
+	<div class="container-fluid">
+<div ng-show="!flagLoading" >
+	<section class="jumbotron jumbotron-bg11 mt-15 mb15 mr-15 ml-15" data-stellar-background-ratio="0.4" 
+		style="min-height: 320px; background-position: 50% 30px; background-image: url('../image/stellar/background8.jpg') !important; ">
+		    <div class="overlay pattern pattern10"></div>
+		    <div class="container" style="padding-top:8%;">
+		        <div style="margin: auto; width: 150px;">
+		        		<img data-toggle="unveil" ng-src="../image/icons/teams-default4.png" 
+                       	 alt="Cover" width="150px" class="unveiled img-rounded" ></div>
+                       	 
+                <h1 class="thin text-white text-center font-alt">{{team.name}}</h1>
+		        <!-- h4 class="thin text-white text-center">Cantidad de jugadores {{team.playeers.length}}</h4-->
+		        
+		        <!-- <div class="text-center pt15">
+		            <a href="#/team/edit/{{team.oid}}" class="btn btn-primary btn-block">Editar <i class=" ico-edit-sign"></i></a>
+		        </div> -->
+		        
+		    </div>
+	</section>
+    
+    
+        <div class="page-header page-header-block mb0">
+            <div class="page-header-section">
+                <h4 class="title semibold hidden-xs hidden-sm">{{team.name}}</h4>
+            </div>
+            <div class="page-header-section">
+            		<div class="row hidden-md">
+            			<div class="col-md-3 col-xs-3 pl15" >
+              			<a href="#/teams" class="btn btn-primary btn-outline mb5">Volver</a>
+	              	</div>
+	              	<div class="col-md-6 col-xs-6" >
+	              		<h4 class="title semibold"></h4>
+	              	</div>
+	              	<div class="col-md-3 col-xs-3" >
+	              		<a href="#/team/edit/{{team.oid}}" class="btn btn-primary btn-outline mb5">Editar</a>
+	              	</div>
+            		</div>
+            
+                <div class="toolbar hidden-xs hidden-sm">
+                    <ol class="breadcrumb breadcrumb-transparent nm">
+                        <li><a href="#/">Home</a></li>
+                        <li><a href="#/teams">Todos los Equipos</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+	
+		        
+        <div class="row" >
+        
+        
+	        <ul class="nav nav-tabs nav-justified">
+			  <li role="presentation" class="active">
+			  	<a data-toggle="tab" aria-expanded="true" data-target="#info" >Info</a></li>
+			  <li role="presentation">
+			  	<a data-toggle="tab" aria-expanded="true" data-target="#players">Jugadores</a></li>
+			  <li role="presentation">
+			  	<a data-toggle="tab" aria-expanded="true" data-target="#staff">Staff</a></li>
+			</ul>
+			
+			<div class="tab-content panel" >
+				
+				<div class="tab-pane np pt15 pb15 mh400 active" id="info" >
+					
+					<div class="row pr10 pl10">
+						<div class="col-md-12"> <b>Bio</b><p>
+						 {{team.bio}} </p></div>
+					</div>
+					<hr/>
+					<div class="row mb10 mt10 pr10 pl10">
+						<div class="col-md-12">
+							Equipo <b>{{msgI18n(team.category)}}</b> {{msgI18n(team.gender)}}
+						</div>
+					</div>
+				
+				</div>
+				<div class="tab-pane np pt15 pb15 mh400" id="players" >
+					
+					<div class="list-group" >
+
+						<div class="alert alert-info mt20 ml10 mr10 text-center" ng-show="!team.players || team.players.length==0">
+							<span class="media-text ellipsis nm">No se han asignado jugadores al equipo.</span>
+						</div>
+						
+						
+						<a class="list-group-item " ng-repeat="player in team.players | filter:q as results" href="#/player/{{player.oid}}">
+							<span class="badge badge-number-player">{{player.number}}</span>
+							<span class="pull-left avatar mr10">
+		                        <img ng-src="../image/avatar/avatar.png" class="img-rounded" alt="">
+		                    </span>
+		                    <div class="clearfix" >
+								<strong>{{player.name}} {{player.lastName}}</strong>
+								<div>{{msgI18n(player.position)}}</div>
+		                    </div>
+						</a>
+					</div>
+				
+				</div>
+				
+				<div class="tab-pane np pt15 pb15 mh400" id="staff" >
+					
+					<div class="media-list">
+					
+						<a href="javascript:void(0);" class="media border-dotted" ng-show="!team.coach">		                      
+		                    <span class="media-body">
+		                        <span class="media-text ellipsis nm">No se han asignado al Entrenador.</span>		                          
+		                    </span>
+		                	</a>
+					
+						<a href="javascript:void(0);" class="media border-dotted" ng-show="team.coach">
+	                      <span class="pull-left">
+	                          <img ng-src="../image/avatar/{{team.coach.image}}" class="media-object" alt="">
+	                      </span>
+	                      <span class="media-body">
+	                          <span class="media-heading">{{team.coach.name}} {{team.coach.lastName}}</span>
+	                          <span class="media-text ellipsis nm">{{team.coach.birthdate}}</span>
+	                      </span>
+	                  	</a>
+                  	</div>
+				</div>
+			</div>
+        	</div>
+        </div>
+	</div>
+</section>
+        <script>
+$.stellar({horizontalScrolling: false});
+</script>
+

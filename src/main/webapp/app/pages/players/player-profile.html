@@ -1,0 +1,103 @@
+<section id="main" role="main" >
+	<div class="container-fluid">
+<div ng-show="!flagLoading" >
+	<section class="jumbotron jumbotron-bg11 mt-15 mb15 mr-15 ml-15" data-stellar-background-ratio="0.4" 
+		style="min-height: 320px; background-position: 50% 30px; background-image: url('../image/stellar/background9.jpg') !important; ">
+		    <div class="overlay pattern pattern10"></div>
+		    <div class="container" style="padding-top:8%;">
+		        <div style="margin: auto; width: 150px;">
+		        		<img data-toggle="unveil" ng-src="../image/avatar/avatar.png" 
+                       	 alt="Cover" width="150px" class="unveiled img-rounded" ></div>
+                       	 
+                <h1 class="thin text-white text-center font-alt">{{player.name}} {{player.lastName}}</h1>
+		        <!-- h4 class="thin text-white text-center">Cantidad de jugadores {{team.playeers.length}}</h4-->
+		        
+		        <div class="text-center pt15">
+		            <a href="#/team/{{team.oid}}/players/{{player.oid}}/edit" class="btn btn-primary btn-block">Editar <i class=" ico-edit-sign"></i></a>
+		        </div>
+		        
+		    </div>
+	</section>
+    
+    
+        <div class="page-header page-header-block mb0">
+            <div class="page-header-section">
+                <h4 class="title semibold hidden-xs hidden-sm">{{player.name}} {{player.lastName}}</h4>
+            </div>
+            <div class="page-header-section">
+                <div class="toolbar">
+                    <ol class="breadcrumb breadcrumb-transparent nm">
+                        <li><a href="#/">Home</a></li>
+                        <li><a href="#/players">Todos los Jugadores</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+	
+		        
+        <div class="row" >
+	        <ul class="nav nav-tabs nav-justified">
+			  <li role="presentation" class="active">
+			  	<a data-toggle="tab" aria-expanded="true" data-target="#info" >Info</a></li>
+			  <li role="presentation">
+			  	<a data-toggle="tab" aria-expanded="true" data-target="#players">Estadisticas</a></li>
+			  <li role="presentation">
+			  	<a data-toggle="tab" aria-expanded="true" data-target="#staff">Skills</a></li>
+			</ul>
+			
+			<div class="tab-content panel" >
+				<div class="tab-pane np pt15 pb15 mh400 active" id="info" >
+					<!-- div class="row pr10 pl10">
+						<div class="col-md-6"> <b>Nombre</b><p>
+						 {{player.name}} {{player.lastName}}</p></div>
+					</div>
+					<hr/-->
+					<div class="row pr10 pl10 text-center">
+						<div class="col-md-6 col-xs-6"> 
+							<div style="font-size:30px;font-weight:bold;color:gray;">
+						 	{{player.height}} m</div>
+						 	<div>Estatura</div>
+						 </div>
+						<div class="col-md-6 col-xs-6"> 
+						 	<div  style="font-size:30px;font-weight:bold;color:gray;">
+						 		{{player.weight}} kg</div>
+						 	<div>Peso</div>
+						 </div>
+					</div>
+					<hr/>
+					<div class="row pr10 pl10 text-center">
+						<div class="col-md-6 col-xs-6"> 
+							<div style="font-size:30px; font-weight:bold;color:gray;">
+						 		{{msgI18n(player.position)}} </div>
+						 	<div>Posicion</div>
+						 </div>
+						<div class="col-md-6 col-xs-6"> 
+							<div style="font-size:30px; font-weight:bold;color:gray;">
+						 		{{player.number}} </div>
+					 		<div>Nº Camiseta</div>
+						 </div>
+					</div>
+					<hr/>
+					<div class="row mb10 mt10 pr10 pl10 text-center">
+						<div class="col-md-6">
+							<div style="font-size:30px; font-weight:bold;color:gray;">
+								<i class="ico-{{player.gender | lowercase}}"></i></div>
+							<div>Genero </div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="tab-pane np pt15 pb15 mh400" id="players" >
+				</div>
+				
+				<div class="tab-pane np pt15 pb15 mh400" id="staff" >
+				</div>
+			</div>
+        	</div>
+        </div>
+	</div>
+</section>
+ <script>
+	$.stellar({horizontalScrolling: false});
+</script>
+

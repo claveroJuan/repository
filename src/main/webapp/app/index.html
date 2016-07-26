@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html ng-app="App" class="backend">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Speedsocket</title>
+<meta name="author" content="juan clavero">
+<meta name="description" content="planea tu partido">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+	href="../image/touch/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"
+	href="../image/touch/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="../image/touch/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed"
+	href="../image/touch/apple-touch-icon-57x57-precomposed.png">
+<link rel="shortcut icon" href="../image/favicon.ico">
+<link rel="stylesheet" href="../stylesheet/bootstrap.css">
+<link rel="stylesheet" href="../stylesheet/layout.css">
+<link rel="stylesheet" href="../stylesheet/uielement.css">
+<link rel="stylesheet" href="../stylesheet/themes/theme4.css">
+<link rel="stylesheet" href="../plugins/jquery-ui/css/jquery-ui.css">
+<link rel="stylesheet" href="../plugins/nprogress/css/nprogress.css">
+<link rel="stylesheet" href="../plugins/steps/css/jquery-steps.css">
+<link rel="stylesheet" href="../font-awesome/css/font-awesome.css">
+<link rel="stylesheet" href="../plugins/gritter/css/gritter.css">
+<link rel="stylesheet" href="../stylesheet/custom-app.css">
+<script type="text/javascript"
+	src="../plugins/modernizr/js/modernizr.js"></script>
+
+
+</head>
+
+<body ng-controller="MainController">
+
+
+	<header id="header" class="navbar">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#/"><span class="logo"><img
+					src="../image/logo/logotipo1.png" "/></span></a>
+		</div>
+		<div class="navbar-toolbar clearfix">
+			<ul class="nav navbar-nav navbar-left">
+				<li class="hidden-xs hidden-sm"><a id="btn-sidebar"
+					href="javascript:void(0);" class="sidebar-minimize"
+					data-toggle="minimize" title="Minimize sidebar"> <span
+						class="meta"> <span class="icon"></span>
+					</span>
+				</a></li>
+
+				<li class="navbar-main hidden-lg hidden-md hidden-sm"><a
+					href="javascript:void(0);" data-toggle="sidebar"
+					data-direction="ltr" rel="tooltip" title="Menu sidebar"> <span
+						class="meta"> <span class="icon"><i
+								class="ico-paragraph-justify3"></i></span>
+					</span>
+				</a></li>
+			</ul>
+
+			<div class="navbar-form navbar-left dropdown" id="dropdown-form">
+				<form action="" role="search">
+					<div class="has-icon">
+						<input type="text" class="form-control"
+							placeholder="Search application..."> <i
+							class="ico-search form-control-icon"></i>
+					</div>
+				</form>
+			</div>
+
+			<ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+				<li class="dropdown profile"><a href="javascript:void(0);"
+					class="dropdown-toggle dropdown-hover" data-toggle="dropdown">
+						<span class="meta"> <span class="avatar"><img
+								src="../image/icons/usuario.png" class="img-circle" alt="" /></span> <span
+							class="text hidden-xs hidden-sm pl5">nombre usuario</span> <span
+							class="caret"></span>
+					</span>
+				</a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="javascript:void(0);"><span class="icon"><i
+									class="ico-user-plus2"></i></span> Mi cuenta</a></li>
+						<li><a href="javascript:void(0);"><span class="icon"><i
+									class="ico-cog4"></i></span> Profile Setting</a></li>
+						<li class="divider"></li>
+						<li><a id="logout" href="../index.html"><span
+								class="icon"><i class="ico-exit"></i></span> Salir</a></li>
+					</ul></li>
+			</ul>
+		</div>
+	</header>
+
+
+	<aside class="sidebar sidebar-left sidebar-menu">
+		<section class="content slimscroll">
+
+
+			<h5 class="heading">Menu Principal</h5>
+			<ul class="topmenu topmenu-responsive" data-toggle="menu">
+				<li><a href="#/" data-parent=".topmenu"> <span
+						class="figure"><i class="ico-home2"></i></span> <span class="text">Inicio</span>
+				</a></li>
+				<li><a href="javascript:void(0);" data-target="#teams"
+					data-toggle="submenu" data-parent=".topmenu"> <span
+						class="figure"><i class="ico-dashboard2"></i></span> <span
+						class="text">Administración</span> <span class="arrow"></span>
+				</a>
+					<ul id="teams" class="submenu collapse ">
+						<li class="submenu-header ellipsis">Equipos</li>
+						<li><a href="#/teams"><span class="text">Equipos</span></a></li>
+						<li><a href="#/players"><span class="text">Jugadores</span></a>
+						</li>
+						<li><a href="#/matches"><span class="text">Partidos</span></a>
+						</li>
+						<!-- modificar  -->
+						<li><a href="#/canchas"><span class="text">Canchas</span></a>
+						</li>
+					</ul></li>
+				<li><a href="#/" data-parent=".topmenu"> <span
+						class="figure"><i class="ico-exit"></i></span> <span class="text">Cerrar
+							Sesion</span>
+				</a></li>
+			</ul>
+		</section>
+	</aside>
+
+	<section id="main" role="main" ng-view></section>
+
+
+	<!-- section id="main" role="main" >
+        		<div class="container-fluid" ng-view></div>
+            <a href="javascript:void();" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
+        </section-->
+
+	<script type="text/javascript">
+		var CONSTANTS = {
+			contextPath : "/Speedsocket"
+		//contextPath :"http://basket-magnolabs.rhcloud.com/"
+		};
+	</script>
+	<script type="text/javascript" src="../javascript/angular.min.js"></script>
+	<script type="text/javascript"
+		src="../javascript/angular-resource.min.js"></script>
+	<script type="text/javascript" src="../javascript/angular-route.min.js"></script>
+	<script type="text/javascript"
+		src="../javascript/angular-locale_es-cl.js"></script>
+	<script type="text/javascript" src="../javascript/locale.js"></script>
+
+
+
+	<!-- Descomentar si ambiente tiene conexion a internet -->
+	<!-- script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-resource.min.js"></script>
+    		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.min.js"></script-->
+	<script type="text/javascript" src="../javascript/vendor.js"></script>
+	<script type="text/javascript" src="../javascript/core.js"></script>
+	<script type="text/javascript" src="../javascript/backend/app.js"></script>
+
+	<script type="text/javascript"
+		src="../plugins/jquery-ui/js/jquery-ui.js"></script>
+	<script type="text/javascript"
+		src="../plugins/stellar/js/jquery.stellar.js"></script>
+	<script type="text/javascript" src="../plugins/parsley/js/parsley.js"></script>
+	<script type="text/javascript"
+		src="../plugins/steps/js/jquery-steps.js"></script>
+	<script type="text/javascript"
+		src="../plugins/nprogress/js/nprogress.js"></script>
+	<script type="text/javascript"
+		src="../plugins/inputmask/js/inputmask.js"></script>
+	<script type="text/javascript" src="../plugins/bootbox/js/bootbox.js"></script>
+	<script type="text/javascript"
+		src="../plugins/gritter/js/jquery.gritter.js"></script>
+
+	<script type="text/javascript" src="../js/Application.js"></script>
+	<script type="text/javascript"
+		src="../js/controladores/MainController.js"></script>
+	<script type="text/javascript"
+		src="../js/controladores/TeamController.js"></script>
+	<script type="text/javascript"
+		src="../js/controladores/TeamProfileController.js"></script>
+	<script type="text/javascript"
+		src="../js/controladores/TeamEditController.js"></script>
+	<script type="text/javascript"
+		src="../js/controladores/TeamCreateController.js"></script>
+	<script type="text/javascript"
+		src="../js/controladores/PlayerController.js"></script>
+	<script type="text/javascript"
+		src="../js/controladores/PlayerCreateController.js"></script>
+	<script type="text/javascript"
+		src="../js/controladores/PlayerEditController.js"></script>
+	<script type="text/javascript"
+		src="../js/controladores/PlayerProfileController.js"></script>
+
+	<script type="text/javascript"
+		src="../js/controladores/MatchController.js"></script>
+	<script type="text/javascript"
+		src="../js/controladores/MatchCreateController.js"></script>
+
+</body>
+<!--/ END Body -->
+</html>

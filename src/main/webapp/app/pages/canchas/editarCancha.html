@@ -1,0 +1,106 @@
+<section id="main" role="main" >
+	<div class="container-fluid">
+<div ng-show="!flagLoading && !flagErrorLoading" >
+
+	<section class="jumbotron jumbotron-bg11 mt-15 mb15 mr-15 ml-15" data-stellar-background-ratio="0.4" 
+		style="min-height: 320px; background-position: 50% 30px; background-image: url('../image/stellar/background8.jpg') !important; ">
+		    <div class="overlay pattern pattern10"></div>
+		    <div class="container" style="padding-top:8%;">
+		        <div style="margin: auto; width: 150px;">
+		        		<img data-toggle="unveil" ng-src="../image/icons/teams-default4.png" 
+                       	 alt="Cover" width="150px" class="unveiled img-rounded" ></div>
+                       	 
+                <h1 class="thin text-white text-center font-alt">{{canchas.name}}</h1>
+		       <!-- <h4 class="thin text-white text-center">Cantidad de jugadores {{team.playeers.length}}</h4>-->
+		        
+		     
+		        
+		    </div>
+	</section>
+
+
+	<div class="page-header page-header-block mb0">
+            <div class="page-header-section">
+                <h4 class="title semibold">Editar Cancha</h4>
+            </div>
+            <div class="page-header-section">
+                <div class="toolbar">
+                    <ol class="breadcrumb breadcrumb-transparent nm">
+                        <li><a href="#/">Home</a></li>
+                        <li><a href="#/teams">Cancha</a></li>
+                        <li><a href="#/team/{{team.oid}}">{{canchas.name}}</a></li>
+                        <li class="active">Editar</li>
+                    </ol>
+                </div>
+            </div>
+    </div>
+        
+        
+        
+        <div class="row" >
+        		 <ul class="nav nav-tabs nav-justified">
+				<li role="presentation" class="active">
+					<a data-toggle="tab" aria-expanded="true" data-target="#info" >Info</a></li>
+				
+				<li role="presentation">
+					<a data-toggle="tab" aria-expanded="true" data-target="#staff">Staff</a></li>
+			</ul>
+			
+			<div class="tab-content panel" >
+				
+				<div class="tab-pane np pt15 pb15 mh400 active" id="info" >
+				
+					<form class="form-horizontal form-bordered pr15 pl15" id="form-editar-equipo">
+			        		<div class="form-group">
+			                    <label class="col-sm-3 control-label">Nombre</label>
+			                    <div class="col-sm-9">
+			                        <input type="text" class="form-control" ng-model="team.name"
+			                        data-parsley-errors-container="#error-container" data-parsley-error-message="ingrese el nombre de la cancha" data-parsley-required>
+			                    </div>
+			                </div>
+			                
+			               
+			                
+			                <div class="form-group">
+			                    <label class="col-sm-3 control-label">Categoria</label>
+			                    <div class="col-sm-9">
+	                                <select class="form-control" ng-model="canchas.categoria" 
+	                                data-parsley-errors-container="#error-container" data-parsley-error-message="ingrese una comuna" data-parsley-required>
+	                                		<option value="0">Seleccione una comuna</option>
+	                                		<option value="SANRAMON">SANRAMON</option>
+	                                		<option value="LACISTERNA">LACISTERNA</option>
+	                                		<option value="ELBOSQUE">ELBOSQUE</option>
+	                                		<option value="LAPINTANA">LAPINTANA</option>
+	                                		
+	                                </select>
+	                            </div>
+			                </div>
+			                
+			                	<div class="form-group">
+			                		<div class="col-md-12 text-right pt5 pb0">
+				        				<button class="btn btn-success btn-block mt15 mb15"  value="button"  ng-click="update()">Guardar</button>
+				        				
+				        				<button class="btn btn-danger btn-block mt15 mb15"  value="button"  ng-click="update()">Eliminar</button>
+				        				
+				        			</div>
+			                	</div>
+		                </form>
+				
+				
+				</div>
+				
+				
+				
+        		</div>
+        </div>
+</div>
+
+
+<div class="row" ng-show="flagErrorLoading" >
+	<div class="col-md-12 mb20 mt20 text-center ">
+		<strong style="color:gray;">Ocurrio un error al cargar la información, intente más tarde</strong>
+		<div><i style="font-size:100px;color: #EBEBEB;" class=" ico-heart-broken mb20 mt20"  ></i></div>
+	</div>
+</div>
+</div>
+</section>

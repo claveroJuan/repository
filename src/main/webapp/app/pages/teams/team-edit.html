@@ -1,0 +1,177 @@
+<section id="main" role="main" >
+	<div class="container-fluid">
+<div ng-show="!flagLoading && !flagErrorLoading" >
+
+	<section class="jumbotron jumbotron-bg11 mt-15 mb15 mr-15 ml-15" data-stellar-background-ratio="0.4" 
+		style="min-height: 320px; background-position: 50% 30px; background-image: url('../image/stellar/background8.jpg') !important; ">
+		    <div class="overlay pattern pattern10"></div>
+		    <div class="container" style="padding-top:8%;">
+		        <div style="margin: auto; width: 150px;">
+		        		<img data-toggle="unveil" ng-src="../image/icons/teams-default4.png" 
+                       	 alt="Cover" width="150px" class="unveiled img-rounded" ></div>
+                       	 
+                <h1 class="thin text-white text-center font-alt">{{team.name}}</h1>
+		        <h4 class="thin text-white text-center">Cantidad de jugadores {{team.playeers.length}}</h4>
+		        
+		     
+		        
+		    </div>
+	</section>
+
+
+	<div class="page-header page-header-block mb0">
+            <div class="page-header-section">
+                <h4 class="title semibold">Editar Equipo</h4>
+            </div>
+            <div class="page-header-section">
+                <div class="toolbar">
+                    <ol class="breadcrumb breadcrumb-transparent nm">
+                        <li><a href="#/">Home</a></li>
+                        <li><a href="#/teams">Equipos</a></li>
+                        <li><a href="#/team/{{team.oid}}">{{team.name}}</a></li>
+                        <li class="active">Editar</li>
+                    </ol>
+                </div>
+            </div>
+    </div>
+        
+        
+        
+        <div class="row" >
+        		 <ul class="nav nav-tabs nav-justified">
+				<li role="presentation" class="active">
+					<a data-toggle="tab" aria-expanded="true" data-target="#info" >Info</a></li>
+				<li role="presentation">
+					<a data-toggle="tab" aria-expanded="true" data-target="#players">Jugadores</a></li>
+				<li role="presentation">
+					<a data-toggle="tab" aria-expanded="true" data-target="#staff">Staff</a></li>
+			</ul>
+			
+			<div class="tab-content panel" >
+				
+				<div class="tab-pane np pt15 pb15 mh400 active" id="info" >
+				
+					<form class="form-horizontal form-bordered pr15 pl15" id="form-editar-equipo">
+			        		<div class="form-group">
+			                    <label class="col-sm-3 control-label">Nombre</label>
+			                    <div class="col-sm-9">
+			                        <input type="text" class="form-control" ng-model="team.name"
+			                        data-parsley-errors-container="#error-container" data-parsley-error-message="ingrese el nombre del equipo" data-parsley-required>
+			                    </div>
+			                </div>
+			                
+			                <div class="form-group">
+			                    <label class="col-sm-3 control-label">Bio</label>
+			                    <div class="col-sm-9">
+			                        <textarea class="form-control" ng-model="team.bio"
+			                        data-parsley-errors-container="#error-container" data-parsley-error-message="ingrese una descripcion" data-parsley-required></textarea>
+			                    </div>
+			                </div>
+			                
+			                <div class="form-group">
+			                    <label class="col-sm-3 control-label">Categoria</label>
+			                    <div class="col-sm-9">
+	                                <select class="form-control" ng-model="team.category" 
+	                                data-parsley-errors-container="#error-container" data-parsley-error-message="ingrese una descripcion" data-parsley-required>
+	                                		<option value="0">Seleccione una categoria</option>
+	                                		<option value="CADET">Cadete</option>
+	                                		<option value="JUVENILE">Juvenil</option>
+	                                		<option value="ADULT">Adulto</option>
+	                                		<option value="SENIOR">Senior</option>
+	                                		
+	                                </select>
+	                            </div>
+			                </div>
+			                
+			                <div class="form-group">
+			                    <label class="col-sm-3 control-label">Genero</label>
+			                    <div class="col-sm-9">
+			                           <div class="btn-group btn-group-justified">
+	                                   	   <div class="btn-group" role="group" >
+	                                   	   		<button type="button" class="btn btn-default {{button.male}}"   ng-click="team.gender='MALE';button.male='btn-primary';button.female='';"  >Masculino</button>
+	                                   	   </div>
+	                                   	   <div class="btn-group" role="group" >
+	                                   	   		<button type="button" class="btn btn-default {{button.female}}" ng-click="team.gender='FEMALE';button.female='btn-primary';button.male='';">Femenino</button>
+	                                   	   </div>
+	                                   </div>
+			                       </div>
+			                </div>
+			                	<div class="form-group">
+			                		<div class="col-md-12 text-right pt5 pb0">
+				        				<button class="btn btn-success btn-block mt15 mb15"  value="button"  ng-click="update()">Guardar</button>
+				        				
+				        				<button class="btn btn-danger btn-block mt15 mb15"  value="button"  ng-click="update()">Eliminar</button>
+				        				
+				        			</div>
+			                	</div>
+		                </form>
+				
+				
+				</div>
+				
+				<div class="tab-pane np pt15 pb15 mh400" id="players" >
+					
+					<div class="list-group" >
+						<a class="list-group-item text-center list-group-item-info" href="#/team/{{team.oid}}/players/add"> 
+							Agregar Jugador + 
+						</a>
+					
+						<div class="alert alert-info mt20 ml10 mr10 text-center" ng-show="!team.players || team.players.length==0">
+							<span class="media-text ellipsis nm">No se han asignado jugadores al equipo.</span>
+						</div>
+						
+						
+						<div class="list-group-item edit" ng-repeat="player in team.players | filter:q as results">
+							<div class="actions pull-right animation animating fadeInRight" style="display:none;">
+								<div class="pull-right sq-icon50 danger" ng-click="deletePlayer( player );"><i class="ico-trash"></i></div>
+								<div class="pull-right sq-icon50 info" ng-click="ref('/team/'+team.oid+'/players/'+player.oid+'/edit')"><i class="ico-pencil"></i></div>
+							</div>
+						
+							<span class="badge badge-number-player">{{player.number}}</span>
+							<span class="pull-left avatar mr10">
+		                        <img ng-src="../image/avatar/{{player.image}}" class="img-rounded" alt="">
+		                    </span>
+		                    <div class="clearfix" >
+								<strong>{{player.name}} {{player.lastName}}</strong>
+								<div>{{msgI18n(player.position)}}</div>
+		                    </div>
+							
+						</div>
+					
+					</div>
+				</div>
+				
+				<div class="tab-pane np pt15 pb15 mh400" id="staff" >
+				
+					<div class="media-list">
+		        			<a href="javascript:void(0);" class="media border-dotted" ng-show="!team.coach">		                      
+		                      <span class="media-body">
+		                          <span class="media-text ellipsis nm">No se ha asignado staff al equipo.</span>		                          
+		                      </span>
+		                  	</a>
+		                  	
+		                  <a href="#/mantenedores/jugadores/editar/{{coach.oid}}" class="media" ng-show="team.coach">
+		                      <span class="pull-left">
+		                          <img ng-src="../image/avatar/{{team.coach.image}}" class="media-object" alt="">
+		                      </span>
+		                      <span class="media-body">
+		                          <span class="media-heading">{{team.coach.name}} {{team.coach.lastName}}</span>
+		                          <span class="media-text ellipsis nm">{{team.coach.birthdate}}</span>
+		                      </span>
+		                  </a>
+		              </div>
+				
+				</div>
+        		</div>
+        </div>
+</div>
+
+
+<div class="row" ng-show="flagErrorLoading" >
+	<div class="col-md-12 mb20 mt20 text-center ">
+		<strong style="color:gray;">Ocurrio un error al cargar la información, intente más tarde</strong>
+		<div><i style="font-size:100px;color: #EBEBEB;" class=" ico-heart-broken mb20 mt20"  ></i></div>
+	</div>
+</div>
+</div>
+</section>

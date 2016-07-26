@@ -1,0 +1,65 @@
+<section id="main" role="main" >
+	<div class="container-fluid">
+        <div class="page-header page-header-block">
+            <div class="page-header-section hidden-xs hidden-sm">
+                <h4 class="title semibold ">Nuevo Partido</h4>
+            </div>
+            <div class="page-header-section">
+            		<div class="row hidden-md">
+            			<div class="col-md-3 col-xs-3 pl15" >
+              			<a href="#/matches" class="btn btn-primary btn-outline mb5">Volver</a>
+	              	</div>
+	              	<div class="col-md-6 col-xs-6" >
+	              		<h4 class="title semibold">Nuevo Partido</h4>
+	              	</div>
+	              	<div class="col-md-3 col-xs-3" ></div>
+            		</div>
+            	
+                <div class="toolbar hidden-xs hidden-sm">
+                    <ol class="breadcrumb breadcrumb-transparent nm">
+                        <li><a href="#/">Home</a></li>
+                        <li><a href="#/matches">Partidos</a></li>
+                        <li class="active">Nuevo Partido</li>
+                    </ol>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        
+        <div class="row">
+   			<div class="col-md-6" style="border-right:1px solid #e0e7e8;">
+				<form class="form-horizontal form-bordered" id="">
+					
+					<div class="form-group">
+		                 <label class="col-sm-3 control-label">Equipo Local</label>
+		                 <div class="col-sm-9">
+		                     <select class="form-control" ng-model="match.local" ng-options="x.name for x in teams" ></select>
+		                 </div>
+		             </div>
+		             
+		             
+		             <div class="form-group">
+		                 <label class="col-sm-3 control-label">Equipo Visitante</label>
+		                 <div class="col-sm-9">
+		                     <select class="form-control" ng-model="match.visitor" ng-options="x.name for x in teams" ></select>
+		                 </div>
+		             </div>
+					
+					
+					<div class="form-group">
+						<div class="col-sm-12">
+							<button class="btn btn-success btn-block mt15 mb15"  value="button" ng-click="save()">Guardar</button>
+						</div>
+					</div>
+					<div ng-show="diplayError" class="alert alert-danger">{{errorMsg}}</div>
+				</form>
+   			</div>
+   		</div>
+	</div>
+</section>
+
+<script>
+$.stellar({horizontalScrolling: false});
+</script>
