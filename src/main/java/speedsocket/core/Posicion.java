@@ -1,5 +1,5 @@
 
-package speedsocket;
+package speedsocket.core;
 
 
 public enum Posicion {

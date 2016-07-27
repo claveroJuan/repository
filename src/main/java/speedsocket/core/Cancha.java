@@ -1,13 +1,17 @@
-package speedsocket;
+package speedsocket.core;
+
+import java.util.List;
 
 public class Cancha {
 	
 	private String oid;
-	private String oidCurrentTeam;
-	private Comuna currentComuna;
+	
+	private Comuna comuna;
 	private int contacto;
 	private String direccion;
 	private String categoria;
+	private List<Cancha> canchas;
+
 
 
 @Override
@@ -20,33 +24,7 @@ private Object getOid() {
 	// TODO Auto-generated method stub
 	return null;
 }
-/**
- * @return the oidCurrentTeam
- */
-public String getOidCurrentTeam() {
-	return oidCurrentTeam;
-}
-/**
- * @param oidCurrentTeam the oidCurrentTeam to set
- */
-public void setOidCurrentTeam(String oidCurrentTeam) {
-	this.oidCurrentTeam = oidCurrentTeam;
-}
-/**
- * @return the currentComuna
- */
-public Comuna getCurrentComuna() {
-	return currentComuna;
-}
-/**
- * @param currentComuna the currentComuna to set
- */
-public void setCurrentComuna(Comuna currentComuna) {
-	this.currentComuna = currentComuna;
-}
-/**
- * @return the contacto
- */
+
 public int getContacto() {
 	return contacto;
 }
@@ -71,9 +49,7 @@ public void setDireccion(String direccion) {
 /**
  * @param oid the oid to set
  */
-public void setOid(String oid) {
-	this.oid = oid;
-}
+
 /**
  * @param oid
  * @param oidCurrentTeam
@@ -81,13 +57,17 @@ public void setOid(String oid) {
  * @param contacto
  * @param direccion
  */
-public Cancha(String oid, String oidCurrentTeam, Comuna currentComuna, int contacto, String direccion) {
+public Cancha(String oid, String oidCurrentTeam, Comuna currentComuna, int contacto, String direccion, List<Cancha> canchas) {
 	super();
 	this.oid = oid;
-	this.oidCurrentTeam = oidCurrentTeam;
-	this.currentComuna = currentComuna;
+	this.comuna = currentComuna;
 	this.contacto = contacto;
 	this.direccion = direccion;
+	this.canchas=canchas;
+}
+public Cancha(String oidCancha) {
+	// TODO Auto-generated constructor stub
+	this.oid=oidCancha;
 }
 /**
  * @return the categoria
@@ -100,6 +80,34 @@ public String getCategoria() {
  */
 public void setCategoria(String categoria) {
 	this.categoria = categoria;
+}
+/**
+ * @return the comuna
+ */
+public Comuna getComuna() {
+	return comuna;
+}
+/**
+ * @param comuna the comuna to set
+ */
+public void setComuna(Comuna comuna) {
+	this.comuna = comuna;
+}
+/**
+ * @param oid the oid to set
+ */
+public void setOid(String oid) {
+	this.oid = oid;
+}
+public List<Cancha> getCanchas() {
+	// TODO Auto-generated method stub
+	return null;
+}
+/**
+ * @param canchas the canchas to set
+ */
+public void setCanchas(List<Cancha> canchas) {
+	this.canchas = canchas;
 }
 
 

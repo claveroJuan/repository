@@ -1,8 +1,13 @@
 
-package speedsocket;
+package speedsocket.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import speedsocket.Partido;
+import speedsocket.core.Cancha;
+import speedsocket.core.Equipo;
+import speedsocket.core.Jugador;
 public class DataSingleton {
 	
 	private List<Equipo> teams;
@@ -70,6 +75,11 @@ public class DataSingleton {
 	 */
 	public void setCanchas(List<Cancha> canchas) {
 		this.canchas = canchas;
+	}
+
+	public List<Partido> getPartido() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

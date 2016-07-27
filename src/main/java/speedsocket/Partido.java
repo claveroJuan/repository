@@ -3,6 +3,8 @@ package speedsocket;
 
 import java.util.Date;
 
+import speedsocket.core.Equipo;
+
 public class Partido {
 
 	private String oid;

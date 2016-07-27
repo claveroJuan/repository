@@ -1,5 +1,5 @@
 
-package speedsocket;
+package speedsocket.service;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

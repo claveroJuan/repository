@@ -1,6 +1,8 @@
-package speedsocket;
+package speedsocket.core;
 
 import java.util.Date;
+
+import speedsocket.service.ServiceLocator;
 
 public class TestPersona {
 

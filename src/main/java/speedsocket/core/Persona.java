@@ -1,5 +1,5 @@
 
-package speedsocket;
+package speedsocket.core;
 
 import java.util.Date;
 
@@ -13,12 +13,13 @@ public class Persona {
 	private double weight;
 	private Sexo sexo;
 	
-	public Persona() {
-		this.name = "";
-		this.lastName = "";
-		this.birthdate = new Date();
-		this.height = 0;
-		this.weight = 0;
+	private String pass;
+	
+	public Persona(String nombre, String pass) {
+		this.name = nombre;
+		this.pass=pass;
+	
+	
 	}
 	
 	public Persona(String name, String lastName, Date birthdate, double height,
@@ -31,6 +32,10 @@ public class Persona {
 		this.weight = weight;
 	}
 	
+	public Persona(String name2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -77,5 +82,33 @@ public class Persona {
 
 	public void setGender(Sexo sexo) {
 		this.sexo = sexo;
+	}
+
+	/**
+	 * @return the sexo
+	 */
+	public Sexo getSexo() {
+		return sexo;
+	}
+
+	/**
+	 * @param sexo the sexo to set
+	 */
+	public void setSexo(Sexo sexo) {
+		this.sexo = sexo;
+	}
+
+	/**
+	 * @return the pass
+	 */
+	public String getPass() {
+		return pass;
+	}
+
+	/**
+	 * @param pass the pass to set
+	 */
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
 }

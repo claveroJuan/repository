@@ -1,5 +1,5 @@
 
-package speedsocket;
+package speedsocket.core;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ public class Equipo {
 	private String bio;
 	private Sexo sexo;
 	private List<Jugador> jugadores;
-	private Entrenador coach;
+	
 	private EquipoCategoria category;
 	
 
@@ -72,14 +72,6 @@ public class Equipo {
 		this.bio = bio;
 	}
 
-	public Entrenador getCoach() {
-		return coach;
-	}
-
-	
-	public void setCoach(Entrenador coach) {
-		this.coach = coach;
-	}
 
 	
 	public EquipoCategoria getCategory() {

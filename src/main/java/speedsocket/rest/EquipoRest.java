@@ -1,5 +1,5 @@
 
-package speedsocket;
+package speedsocket.rest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +12,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import speedsocket.core.Equipo;
+import speedsocket.core.Jugador;
+import speedsocket.dao.DataSingleton;
 @Path( "teams" )
 public class EquipoRest {
 	

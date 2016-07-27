@@ -1,5 +1,5 @@
 
-package speedsocket;
+package speedsocket.core;
 
 public class Jugador extends Persona{
 	
@@ -9,22 +9,18 @@ public class Jugador extends Persona{
 	private int number;
 	private Posicion posicion;
 
+	public Jugador(String name) {
+		super(name);
 	
-	public Jugador(){
-		this.number = 0;
-		this.posicion = null;
 	}
+
 	
-	public Jugador(int number, Posicion posicion) {
-		super();
-		this.number = number;
-		this.posicion = posicion;
+	public Jugador(String name, String pass) {
+		super(name, pass);
+	
 	}
 
 
-	public Jugador(String oid) {
-		this.setOid(oid);
-	}
 
 	public int getNumber() {
 		return number;
