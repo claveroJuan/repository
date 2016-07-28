@@ -3,6 +3,7 @@ package speedsocket.core;
 
 public class Jugador extends Persona{
 	
+	
 	private String oid;
 	private String oidCurrentTeam;
 	private Equipo currentTeam;
@@ -72,6 +73,21 @@ public class Jugador extends Persona{
 
 	public void setCurrentTeam(Equipo currentTeam) {
 		this.currentTeam = currentTeam;
+	}
+
+	/**
+	 * @return the posicion
+	 */
+	public Posicion getPosicion() {
+		return posicion;
+	}
+
+
+	/**
+	 * @param posicion the posicion to set
+	 */
+	public void setPosicion(Posicion posicion) {
+		this.posicion = posicion;
 	}
 
 }

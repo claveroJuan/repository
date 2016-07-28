@@ -2,6 +2,7 @@ package speedsocket.dao;
 
 import java.util.List;
 
+
 import speedsocket.core.Jugador;
 
 public abstract class JugadorDao {
@@ -17,4 +18,5 @@ public abstract class JugadorDao {
 	public abstract void eliminarJugador(Jugador jugador);
 
 	public abstract void actualizarJugador(Jugador jugador, Jugador jActualizado);
+
 }

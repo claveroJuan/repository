@@ -18,5 +18,5 @@ public abstract class EquipoDao {
 	
 	public abstract void eliminarEquipo(Equipo equipo);
 
-	public abstract void actualizarequipo( Equipo equipo, Equipo eActualizado );
+	public abstract void actualizarEquipo( Equipo equipo, Equipo eActualizado );
 }

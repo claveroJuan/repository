@@ -32,11 +32,11 @@ document.getElementById("inputUsuario").addEventListener("keydown", changeInput)
 
 function  validarDatos()
 {
-	if( $("#inputUsuario").val()=="" && 
-	$("#inputPassword").val()=="" )
+	if( $("#inputUsuario").val()=="juan " && 
+	$("#inputPassword").val()=="clavero" )
 	{
 		$("#result-input").html( "Ingrese usuario y password" );
 		$("#result-input").attr("class", "alert alert-danger");
-		return false;
+		return true;
 	}
 }

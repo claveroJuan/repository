@@ -1,5 +1,6 @@
 package speedsocket.core;
 
+import java.util.Date;
 import java.util.List;
 
 public class Cancha {
@@ -108,6 +109,10 @@ public List<Cancha> getCanchas() {
  */
 public void setCanchas(List<Cancha> canchas) {
 	this.canchas = canchas;
+}
+public void setFechaCreacion(Date date) {
+	// TODO Auto-generated method stub
+	
 }
 
 

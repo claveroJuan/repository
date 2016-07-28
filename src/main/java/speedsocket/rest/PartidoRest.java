@@ -7,12 +7,15 @@ import java.util.UUID;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+//import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+//import facade.PartidoFacade;
+//import facade.PersonaFacade;
 import speedsocket.Partido;
 import speedsocket.dao.DataSingleton;
+//import speedsocket.service.ServiceLocator;
 
 @Path( "partidos" )
 public class PartidoRest {
@@ -31,15 +34,8 @@ public class PartidoRest {
 		return match;
 	}
 	
-	@GET
-	@Path( "/{oid}" )
-	@Produces( MediaType.APPLICATION_JSON )
-	public Partido findById( @PathParam("oid") String oid ){
-		Partido match = new Partido(oid);
-		for(Partido t : DataSingleton.getInstance().getMatches() ){
-			if(t.equals( match) )
-				return t;
-		}
-		return null;
-	}
+	
+//	private PartidoFacade getFacade(){
+//		return (PartidoFacade)ServiceLocator.getContext().getBean("persona-facade");
+//	}
 }

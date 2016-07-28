@@ -1,5 +1,5 @@
 
-app.controller("CanchaControllerController", function($scope, $http, $location){
+app.controller("CanchaController", function($scope, $http, $location){
 	
 	
 	$scope.teams = [];

@@ -6,14 +6,24 @@ import java.util.Date;
 
 public class Persona {
 
+	
+	
 	private String name;
 	private String lastName;
 	private Date birthdate;
+	private Date fechaCreacion;
 	private double height;
 	private double weight;
 	private Sexo sexo;
 	
 	private String pass;
+	@Override
+	public boolean equals(Object obj) {
+		if( obj instanceof Persona ){
+			return ((Persona)obj).getName().equals(this.getName());
+		}
+		return super.equals(obj);
+	}
 	
 	public Persona(String nombre, String pass) {
 		this.name = nombre;
@@ -110,5 +120,13 @@ public class Persona {
 	 */
 	public void setPass(String pass) {
 		this.pass = pass;
+	}
+
+	public Date getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+	public void setFechaCreacion(Date fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
 	}
 }

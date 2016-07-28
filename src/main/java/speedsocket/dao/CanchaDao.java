@@ -9,7 +9,7 @@ public abstract class CanchaDao {
 
 
 	
-	public abstract List<Cancha> getCanhas();
+	public abstract List<Cancha> getCanchas();
 
 	public abstract Cancha getCanchas( String nombreCancha );
 	
@@ -20,4 +20,7 @@ public abstract class CanchaDao {
 	public abstract void eliminarCancha(Cancha cancha);
 
 	public abstract void actualizarCancha( Cancha cancha, Cancha cActualizado );
+
+	public abstract boolean login(Cancha cancha);
+
 }

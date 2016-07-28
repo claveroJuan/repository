@@ -8,12 +8,14 @@ import speedsocket.Partido;
 import speedsocket.core.Cancha;
 import speedsocket.core.Equipo;
 import speedsocket.core.Jugador;
+import speedsocket.core.Persona;
 public class DataSingleton {
 	
 	private List<Equipo> teams;
 	private List<Jugador> players;
 	private List<Partido> matches;
 	private List<Cancha> canchas;
+	private List<Persona> personas;
 	private static DataSingleton _instance;
 	
 	//constructor privado 
@@ -80,6 +82,34 @@ public class DataSingleton {
 	public List<Partido> getPartido() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	/**
+	 * @return the personas
+	 */
+	public List<Persona> getPersonas() {
+		return personas;
+	}
+
+	/**
+	 * @param personas the personas to set
+	 */
+	public void setPersonas(List<Persona> personas) {
+		this.personas = personas;
+	}
+
+	/**
+	 * @return the _instance
+	 */
+	public static DataSingleton get_instance() {
+		return _instance;
+	}
+
+	/**
+	 * @param _instance the _instance to set
+	 */
+	public static void set_instance(DataSingleton _instance) {
+		DataSingleton._instance = _instance;
 	}
 
 	

@@ -7,14 +7,13 @@
 	 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 	
-	<bean id="persona1" class="speedsocket.Persona" >
+	<bean id="persona-facade" class="speedsocket.facade.PersonaFacade" >
 		<property name="name" value="Juan Eduardo"></property>
 		<property name="lastName" value="Clavero De Oliveira"></property>
 	</bean>
 	
-	<bean id="persona2" class="speedsocket.Persona" >
-		<property name="name" value="Erick "></property>
-		<property name="lastName" value="Urbina"></property>
+	<bean id="equipo-facade" class="speedsocket.facade.EquipoFacade" >
+		<property name="name" value="colo-colo"></property>
 	</bean>
 	
 	<bean id="persona3" class="speedsocket.Persona" >
